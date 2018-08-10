@@ -1,0 +1,178 @@
+body{
+    padding: 0;
+    margin: 0;
+    background: #f2f2f2;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.header{
+  font-family: 'Lucida Sans', sans-serif;
+  font-weight: bolder;
+  font-size: 28px;
+  background: rgb(96, 125, 139);
+  color: white;
+  text-align: center;
+  padding: 30px;
+  box-shadow: #4c5c6a 2px 2px 5px 1px;
+}
+
+.container {
+    width: 80%;
+    /* display: block; */
+    margin: 20px auto;
+}
+
+.card {
+    width: 300px;
+    height: 200px;
+    background: white;
+    border-radius: 4px;
+    margin:20px;
+    box-shadow: rgb(99, 110, 115) 0px 2px 4px;
+}
+
+.card-title{
+    background-color: #b0bec5;
+    color: black;
+    font-size:18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding:16px;
+}
+.card-body{
+    padding: 16px;
+    font-size:16px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.sticky-note{
+    position: relative;
+    width: 27%;
+    border-radius: 4px;
+    margin:20px;
+    box-shadow: rgb(99, 110, 115) 0px 2px 4px;
+    background: linear-gradient(#FFF93A, #FFFC9E);
+    min-height: 250px;
+    display: inline-block;
+    padding: 16px;
+    font-size:16px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    animation: slide-up 0.4s ease;
+}
+
+ .remove-item{
+    animation: slide-down 0.4s ease;
+}
+
+.sticky-note .note{
+    font-size:22px;
+}
+
+
+.sticky-note .sticky-footer{
+    width: 90%;
+    display: block;
+    position: absolute;
+    bottom: 8px;
+    color: #bbb;
+}
+
+.sticky-note .sticky-footer .caption{
+    font-style: italic;
+    font-size: 14px;
+    font-weight: 200;
+}
+.sticky-note .sticky-footer button{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: #FFFC9E;
+    color:#bbb;
+    font-size: 14px;
+    padding: 4px 16px;
+    border: 0;
+    font-weight: 200;
+    letter-spacing: 0;
+    border-radius: 3px;
+}
+
+.sticky-note .sticky-footer button:hover {
+    color: #FFF93A;
+    background: #BBB;
+    
+}
+
+button:focus{
+    outline: 0;
+}
+
+.form-control {
+    border: none;
+    border-bottom: 2px solid rgb(96, 125, 139);
+    display: block;
+    margin: 0;
+    padding: 4px;
+    width: 100%;
+    min-height: 70px;
+    background: 0 0;
+    text-align: left;
+    color: rgb(96, 125, 139);
+    resize: none;
+    outline: none;
+    background-color: transparent;
+    font: 400 18px Arial;
+    /* transition: all 300ms; */
+}
+
+ textarea:focus{
+    outline: none !important;
+    border-bottom: 3px solid rgb(96, 125, 139);
+}
+
+.add-btn {
+    margin-top: 5px;
+    width: 100%;
+    background:rgb(96, 125, 139);
+    border: none;
+    border-radius: 2px;
+    color: white;
+    font-family: "Roboto","Helvetica","Arial",sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-align: center;
+    line-height: 30px;
+    vertical-align: middle;
+    transition: all 330ms ease;
+    box-shadow: rgb(99, 110, 115) 0px 2px 4px;
+
+}
+.add-btn:hover{
+    background: rgb(118, 162, 184);
+}
+
+
+@keyframes slide-up {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-down {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
