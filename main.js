@@ -1,4 +1,4 @@
-var container = document.querySelector('.main');
+let container = document.querySelector('.main');
 
 window.addEventListener('load', function () {
     var allNotes = fetchNotes();
@@ -6,13 +6,13 @@ window.addEventListener('load', function () {
 })
 
 
-var note = document.querySelector("#note");
-var addButton = document.querySelector("#add-note");
+let note = document.querySelector("#note");
+let addButton = document.querySelector("#add-note");
 
 addButton.addEventListener('click', function (e) {
     if (note.value) {
-        var date = new Date();
-        var key = date.getTime();
+        let date = new Date();
+        let key = date.getTime();
         saveNote(key, note.value);
         //add note to DOM;;;
         addSingleNoteToDOM({ key: key, note: note.value })
@@ -23,14 +23,14 @@ addButton.addEventListener('click', function (e) {
 
 
 function saveNote(key, note) {
-    var notes = fetchNotes();
+    let notes = fetchNotes();
     notes.push({ key: key, note: note });
     window.localStorage.setItem("notes", JSON.stringify(notes));
 }
 
 
 function fetchNotes() {
-    var notes = JSON.parse(window.localStorage.getItem("notes"));
+    let notes = JSON.parse(window.localStorage.getItem("notes"));
     if (!notes) {
         notes = [];
     }
@@ -39,10 +39,10 @@ function fetchNotes() {
 
 //delete note;;
 function deleteNote(key){
-    var sticker = document.getElementById(key);
+    let sticker = document.getElementById(key);
     sticker.classList.add("remove-item");
     //delete from localStorage
-    var notes = fetchNotes();
+    let notes = fetchNotes();
     notes = notes.filter(function(note){
         return note.key != key;
     });
@@ -65,9 +65,9 @@ function addNotesToDOM(notes) {
 
 
 function addSingleNoteToDOM(note) {
-    var date = new Date(note.key);
-    var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Nov', 'Dec'];
-    var template = `
+    let date = new Date(note.key);
+    let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Nov', 'Dec'];
+    let template = `
             <div class="note">
                 ${note.note}
             </div>
@@ -77,7 +77,7 @@ function addSingleNoteToDOM(note) {
             </div>
      
         `
-    var elem = document.createElement('div');
+    let elem = document.createElement('div');
     elem.className = "sticky-note";
     elem.setAttribute('id', note.key)
     elem.innerHTML = template;
